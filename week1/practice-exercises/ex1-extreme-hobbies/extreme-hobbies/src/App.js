@@ -7,11 +7,13 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+      </header>
 
+      <main>
         <h1>Extreme Hobbies</h1>
         <HobbyList />
+      </main>
 
-      </header>
       <footer>&copy; 2021 Created By Marzieh !</footer>
     </div>
   );

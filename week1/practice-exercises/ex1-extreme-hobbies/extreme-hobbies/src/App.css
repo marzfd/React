@@ -1,3 +1,7 @@
+body {
+  font-family: cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -15,7 +19,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,6 +27,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+main {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 ul {
   line-height: 1.5em;
   margin: 5px 0 15px;
@@ -36,6 +49,7 @@ ul {
   text-align: start;
 
 }
+
 .hobby-list li::before {
   content: '*';
   position: absolute;
@@ -49,7 +63,7 @@ footer {
   bottom: 0;
   width: 100%;
   font-size: 1.2rem;
-  background-color: #2158c730;
+  background-color: #282c34;
   color: white;
   padding: 20px;
 }
