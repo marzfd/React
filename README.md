@@ -7,3 +7,10 @@
 <br/>
 
 This repository contains all homework assignments for the [React Module](https://github.com/HackYourFuture/React).
+
+</br>
+
+## Homework Projects
+* [Counter](https://hardcore-williams-9b0c29.netlify.app/)
+* [Extreme Hobbies](https://fervent-lamarr-b821a6.netlify.app/)
+* [Perfect Customer Services](https://romantic-kowalevski-487e26.netlify.app/)
