@@ -7,11 +7,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-
+      </header>
+      <main>
         <h1>React Counter App</h1>
         <Counter />
-      </header>
-
+      </main>
       <footer>&copy; 2021 Created By Marzieh !</footer>
     </div>
   );
