@@ -10,6 +10,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+      </header>
+
+      <main>
         <div className="guarantee">
           <Guarantee
             img = { freeShipping }
@@ -27,7 +30,8 @@ function App() {
             description = "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
           />
         </div>
-      </header>
+      </main>
+
       <footer>&copy; 2021 Created By Marzieh !</footer>
     </div>
   );
