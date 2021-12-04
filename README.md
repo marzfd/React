@@ -11,7 +11,7 @@ This repository contains all homework assignments for the [React Module](https:/
 </br>
 
 ## Homework Projects
-* [Budget Calculator](https://61a65f5020a02b4c866f8029--peaceful-bohr-c5afa8.netlify.app/)
+* [Budget Calculator](https://hardcore-poitras-0f4aa5.netlify.app/)
 * [Counter](https://hardcore-williams-9b0c29.netlify.app/)
 * [Extreme Hobbies](https://fervent-lamarr-b821a6.netlify.app/)
 * [Perfect Customer Services](https://romantic-kowalevski-487e26.netlify.app/)
