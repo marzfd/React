@@ -47,6 +47,11 @@ main {
   align-items: center;
 }
 
+.loading {
+  font-size: 1.5rem;
+  color: #282c34;
+}
+
 .person {
   background-color: #f8e6ba;
   border-radius: 10px;
