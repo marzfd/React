@@ -3,14 +3,18 @@ import React from 'react'
 function Joke({ joke }) {
   return (
     <div>
-      <img src={joke.icon_url} alt="icon" />
+      Click for another joke ! <br />
+      👇 <br />
+      <button
+        onClick={() => {window.location.reload()}}
+      >
+        <img src={joke.icon_url} alt="icon" />
+        </button>
       <p>
         {joke.value}
-      </p>
-      <p>
       </p>
     </div>
   )
 }
 
-export default Joke
+export default Joke;

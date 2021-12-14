@@ -50,6 +50,17 @@ main {
   font-size: calc(15px + 1vmin);
 }
 
+button {
+  background-color: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
 footer {
   position: fixed;
   bottom: 0;

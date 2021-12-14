@@ -6,7 +6,7 @@ function RandomJoke() {
   const [joke, setJoke] = useState({});
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useEffect( getJoke => {
     fetch('https://api.chucknorris.io/jokes/random')
       .then(response => response.json())
       .then(data => {
