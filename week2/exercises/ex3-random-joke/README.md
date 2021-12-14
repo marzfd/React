@@ -1,4 +1,4 @@
-# Random Joke Generator]
+# Random Joke Generator
 
 Never run out of jokes with the Random Joke Generator!
 
