@@ -1,0 +1,107 @@
+body {
+  font-family: cursive;
+  background-color: #a5f8ac;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 5vmin;
+  pointer-events: none;
+  margin-top: 30px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  background-color: #3e4c64;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  font: 1.2em sans-serif;
+  font-size: calc(8px + 1vmin);
+  outline: none;
+}
+
+button:hover {
+  background-color: #49694b;
+  transform: scale(1.1);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+  border-radius: 8px;
+  border:5px solid rgba(0, 0, 0, 0.2)
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #282c34;
+  color: white;
+  font-size: calc(9px + 1vmin);
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    margin: 3px;
+    padding: 3px;
+  }
+  .gallery img {
+    width: 170px;
+    height: 170px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gallery img {
+    width: 100px;
+    height: 100px;
+  }
+}
