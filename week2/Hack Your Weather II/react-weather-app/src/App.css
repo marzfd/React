@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: cursive;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 8vmin;
+  pointer-events: none;
+  margin-top: 2%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 5vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 1.5rem;
+}
+
+.city-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.city-list li {
+  list-style: none;
+  margin: 1rem 0;
+  border: 2px solid #282c34;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  font-size: calc(5px + 1.5vmin);
+  width: 25rem;
+}
+
+.city-list li:last-child {
+  margin-bottom: 100px;
+}
+
+.city-list h3 {
+  margin-bottom: 1.5rem;
+}
+
+.city-list p {
+  margin: 10px 0;
+}
+
+.city-list .desc {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+
+.searchBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-right: 10px;
+  width: 17em;
+
+}
+
+.searchBtn {
+  padding: 10px;
+  border: none;
+  width: 8em;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  background-color: #4b5363;
+  color: aliceblue;
+}
+
+footer {
+  background-color: #282c34;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  font-size: calc(10px + 1vmin);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .city-list li {
+    font-size: calc(10px + 1vmin);
+    padding: 5px 10px;
+    margin: 10px 0;
+  }
+
+  .city-list .desc {
+    margin-bottom: 1rem;
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search {
+    width: 100%;
+  }
+
+  .searchBtn {
+    width: 100%;
+    margin: 2%;
+  }
+
+  .city-list li {
+    padding: 5px 5px;
+    margin: 5px 0;
+    width: 100%;
+  }
+}
