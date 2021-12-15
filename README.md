@@ -11,6 +11,7 @@ This repository contains all homework assignments for the [React Module](https:/
 </br>
 
 ## Homework Projects
+* [Random Joke](https://pedantic-turing-52b0c6.netlify.app/)
 * [Dog Photo Gallery](https://agitated-perlman-e0ee48.netlify.app/)
 * [Random Person](https://hardcore-brown-80979e.netlify.app/)
 * [Budget Calculator](https://hardcore-poitras-0f4aa5.netlify.app/)
