@@ -62,18 +62,24 @@ body {
 }
 
 .city-list .desc {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  margin-top: 0;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  margin-top: 0.2rem;
 }
-
 
 .searchBox {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.alert {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: red;
 }
 
 .search {
@@ -82,7 +88,7 @@ body {
   font-size: 1.1rem;
   margin-right: 10px;
   width: 17em;
-
+  outline: none;
 }
 
 .searchBtn {
@@ -93,6 +99,8 @@ body {
   font-size: 1.1rem;
   background-color: #4b5363;
   color: aliceblue;
+  cursor: pointer;
+  outline: none;
 }
 
 footer {
