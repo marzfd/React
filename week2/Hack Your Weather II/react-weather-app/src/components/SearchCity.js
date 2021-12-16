@@ -3,7 +3,9 @@ import CityInfo from './CityInfo';
 
 function SearchCity() {
 
-  const [city, setCity] = useState({});
+  const [city, setCity] = useState('');
+  const [allData, setAllData] = useState();
+  const [isCity, setIsCity] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -14,7 +16,14 @@ function SearchCity() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setCity(data);
+
+        if(data.message === 'city not found'){
+          console.log('city is not found')
+          setIsCity(true)
+        }else {
+          setAllData(data);  
+          setIsCity(false)
+        } 
       }
       catch(err) {
         console.log(`Error ! : ${err}`);
@@ -25,10 +34,8 @@ function SearchCity() {
     }
   }
 
-
   return (
     <>
-
       <form onSubmit={handleSubmit}>
         <input
           className='search'
@@ -45,8 +52,8 @@ function SearchCity() {
         </button>
       </form>
 
-      {city && <CityInfo city={city} />}
-
+      {isCity && <p>City is not found</p>}
+      { (allData && !isCity) && <CityInfo allData={allData} />}
     </>
   )
 }
