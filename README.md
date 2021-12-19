@@ -12,7 +12,7 @@ This repository contains all homework assignments for the [React Module](https:/
 
 ## Homework Projects
 * [Weather App](https://jovial-williams-714386.netlify.app/)
-* [Expense Tracker App](https://condescending-northcutt-b1b458.netlify.app/) (Code-along: using React Hooks and Context API)
+* [Expense Tracker App](https://condescending-northcutt-b1b458.netlify.app/) (Code-along: Using React Hooks and Context API)
 * [Random Joke](https://pedantic-turing-52b0c6.netlify.app/)
 * [Dog Photo Gallery](https://agitated-perlman-e0ee48.netlify.app/)
 * [Random Person](https://hardcore-brown-80979e.netlify.app/)
