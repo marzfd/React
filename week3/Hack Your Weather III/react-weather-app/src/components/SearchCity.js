@@ -54,12 +54,11 @@ function SearchCity() {
       </form>
 
       {!found && <p className='alert'>City Not Found !</p>}
-      {weatherData.length !== 0
-        ?
-        <CityInfo weatherData={weatherData} />
-        :
-        <p className='firstPage'>
-          Search a city to to get the latest forecast ! ⛅☔⛄
+      {(weatherData.length !== 0 && found)
+        ? weatherData.map((data, index) => <CityInfo key={index} weatherData={data} />)
+        : <p className='firstPage'>
+          Search a city to get the latest forecast ! <br />
+          ⛅☔⛄
         </p>
       }
     </>

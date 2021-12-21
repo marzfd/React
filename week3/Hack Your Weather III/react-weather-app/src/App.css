@@ -5,6 +5,7 @@
 
 body {
   font-family: cursive;
+  margin-bottom: 80px;
 }
 
 .App-logo {
@@ -33,6 +34,7 @@ body {
   padding-bottom: 1rem;
   text-align: center;
   margin: 50px 0;
+  line-height: 50px;
 }
 
 .city-list {
@@ -40,21 +42,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 3%;
+  margin-top: 1%;
 }
 
 .city-list li {
   list-style: none;
-  margin: 1rem 0;
   border: 2px solid #282c34;
   padding: 0.5rem 1rem;
   text-align: left;
   font-size: calc(5px + 1.5vmin);
-  width: 25rem;
-}
-
-.city-list li:last-child {
-  margin-bottom: 100px;
+  width: 20rem;
 }
 
 .city-list h3 {
@@ -91,20 +88,21 @@ body {
   border-radius: 10px;
   font-size: 1.1rem;
   margin-right: 10px;
-  width: 17em;
+  width: 12em;
   outline: none;
 }
 
 .searchBtn {
-  padding: 10px;
+  display: inline-block;
   border: none;
-  width: 8em;
   border-radius: 5px;
   font-size: 1.1rem;
   background-color: #4b5363;
-  color: aliceblue;
   cursor: pointer;
   outline: none;
+  color: #fff;
+  transition: all 0.2s;
+  padding:0.6em 1.8em;
 }
 
 footer {
@@ -141,13 +139,19 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-  .search {
+  .search input {
     width: 100%;
   }
 
+  .search {
+    margin-right: 0;
+    font-size: smaller;
+  }
+
   .searchBtn {
-    width: 100%;
-    margin: 2%;
+    margin:0.4em auto;
+    display: block;
+    font-size: smaller;
   }
 
   .city-list li {
@@ -155,4 +159,10 @@ footer {
     margin: 5px 0;
     width: 100%;
   }
+
+  .firstPage {
+    margin: 30px 20px;
+    line-height: 30px;
+  }
+
 }
