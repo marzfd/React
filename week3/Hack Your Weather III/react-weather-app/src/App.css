@@ -4,7 +4,6 @@
 }
 
 body {
-  font-family: cursive;
   margin-bottom: 80px;
 }
 
@@ -27,6 +26,7 @@ body {
   color: white;
   padding-bottom: 1rem;
   text-align: center;
+  font-family: cursive;
 }
 
 .firstPage {
@@ -39,15 +39,17 @@ body {
 
 .city-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-top: 1%;
+  border: 2px solid #282c34;
+  position: relative;
+
 }
 
 .city-list li {
   list-style: none;
-  border: 2px solid #282c34;
   padding: 0.5rem 1rem;
   text-align: left;
   font-size: calc(5px + 1.5vmin);
@@ -68,6 +70,27 @@ body {
   margin-top: 0.2rem;
 }
 
+.deleteBtn {
+  cursor: pointer;
+  background-color: #f52d17;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 0.35rem 0.7rem;
+  position: absolute;
+  top: 90%;
+  left: 98%;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.city-list:hover  .deleteBtn {
+  opacity: 1;
+}
+
 .searchBox {
   display: flex;
   flex-direction: column;
@@ -79,7 +102,7 @@ body {
 
 .alert {
   margin-top: 1.5rem;
-  font-size: 1.5rem;
+  font-size: calc(10px + 1.5vmin);
   color: red;
 }
 
@@ -92,7 +115,8 @@ body {
   outline: none;
 }
 
-.searchBtn {
+.searchBtn,
+.forecastBtn {
   display: inline-block;
   border: none;
   border-radius: 5px;
@@ -103,6 +127,30 @@ body {
   color: #fff;
   transition: all 0.2s;
   padding:0.6em 1.8em;
+  box-shadow:inset 0 -0.5em 1em -0.35em rgba(0,0,0,0.5), inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15), inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+
+.forecastBtn {
+  padding:0.5em 1em;
+  position: absolute;
+  top: 2%;
+  left: 60%;
+  transition: opacity 0.3s ease;
+  font-size: 1rem;
+  background-color: #4bb8eb;
+  box-shadow: 0 3px 20px rgba(46, 110, 229, 0.4);
+  color: #071736;
+
+}
+
+.searchBtn:hover{
+  background-color: #444547;
+  box-shadow:inset 0 -0.5em 1em -0.35em rgba(0,0,0,0.5), inset 0 0.6em 2em -0.3em rgba(148, 175, 235, 0.15), inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+
+.forecastBtn:hover {
+  background-color: #062242;
+  color: #fff;
 }
 
 footer {
@@ -112,8 +160,9 @@ footer {
   bottom: 0;
   width: 100%;
   padding: 20px 0;
-  font-size: calc(10px + 1vmin);
+  font-size: calc(8px + 1vmin);
   text-align: center;
+  font-family: cursive;
 }
 
 @keyframes App-logo-spin {
@@ -126,6 +175,10 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    margin-bottom: 0;
+  }
+
   .city-list li {
     font-size: calc(10px + 1vmin);
     padding: 5px 10px;
@@ -135,6 +188,11 @@ footer {
   .city-list .desc {
     margin-bottom: 1rem;
     font-size: smaller;
+  }
+
+  .forecastBtn {
+    left: 63%;
+    font-size: calc(8px + 1vmin);
   }
 }
 
@@ -163,6 +221,23 @@ footer {
   .firstPage {
     margin: 30px 20px;
     line-height: 30px;
+  }
+
+  .city-list h3 {
+    margin-bottom: .8rem;
+  }
+
+  .city-list p {
+    margin: 0;
+  }
+
+  .city-list li {
+    margin: 0;
+  }
+
+  .forecastBtn {
+    left: 55%;
+    font-size: calc(7px + .5vmin);
   }
 
 }
