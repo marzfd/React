@@ -17,7 +17,7 @@ export const GlobalProvider = ({ children }) => {
   // Fetches weather data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     const API_KEY = process.env.REACT_APP_OPENWEATHERMAP_API_KEY;
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
 
@@ -41,10 +41,6 @@ export const GlobalProvider = ({ children }) => {
     else {
       alert('Please enter a city name !');
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 89f85b94f1b522a0c02ecbddcab843d08f79dbea
   }
 
   // Remove city from list
