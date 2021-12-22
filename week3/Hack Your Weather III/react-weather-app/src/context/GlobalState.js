@@ -41,9 +41,6 @@ export const GlobalProvider = ({ children }) => {
     else {
       alert('Please enter a city name !');
     }
-
-    console.log(weatherData);
-    console.log(city);
   }
 
   // Remove city from list
@@ -66,7 +63,6 @@ export const GlobalProvider = ({ children }) => {
       console.log(`Error ! : ${err}`);
     }
   }
-
 
   return (
     <GlobalContext.Provider
