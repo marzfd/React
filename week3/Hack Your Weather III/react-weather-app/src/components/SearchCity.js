@@ -32,7 +32,7 @@ function SearchCity() {
       </form>
 
       {!found && <p className='alert'>City Not Found !</p>}
-      {(weatherData > 0 && found)
+      {(weatherData.length > 0 && found)
         ? weatherData.map(data => <CityInfo weatherData={data} />)
         : <p className='firstPage'>
           Search a city to get the latest forecast ! <br />
