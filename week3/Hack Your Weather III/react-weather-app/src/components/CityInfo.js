@@ -4,6 +4,15 @@ import { GlobalContext } from "../context/GlobalState";
 function CityInfo({weatherData}) {
 
   const {
+      id,
+      name,
+      sys: { country },
+      weather: [{ main, description }],
+       main: { temp_min, temp_max },
+       coord: { lat, lon }
+    } = weatherData
+
+  const {
     handleDelete,
     handleForecast
   } = useContext(GlobalContext);
@@ -13,12 +22,12 @@ function CityInfo({weatherData}) {
       <div className="city-list">
       <ul>
         <li>
-           <h3><em>{weatherData.name}, {weatherData.sys.country}</em></h3>
-          {/* <h4>{weatherData.main}</h4> */}
-          <p className="desc"><em>{weatherData.description}</em></p>
-          <p>Min temp: {(weatherData.main.temp_min).toFixed(2)} &deg;C </p>
-          <p>Max temp: {(weatherData.main.temp_max).toFixed(2)} &deg;C</p>
-          <p>Location: {weatherData.coord.lon}, {weatherData.coord.lat}</p>
+           <h3><em>{name}, {country}</em></h3>
+          <h4>{main}</h4>
+          <p className="desc"><em>{description}</em></p>
+          <p>Min temp: {(temp_min).toFixed(2)} &deg;C </p>
+          <p>Max temp: {(temp_max).toFixed(2)} &deg;C</p>
+          <p>Location: {lon}, {lat}</p>
         </li>
       </ul>
 
@@ -27,7 +36,7 @@ function CityInfo({weatherData}) {
           className='forecastBtn'
           onClick={() => {
             console.log('forecast button clicked');
-            handleForecast(weatherData.id);
+            handleForecast(id);
           }}
         >
           5-day Forecast
@@ -36,7 +45,7 @@ function CityInfo({weatherData}) {
           className='deleteBtn'
           onClick={() => {
             console.log('City is deleted');
-            handleDelete(weatherData.id);
+            handleDelete(id);
           }}
         >
           x
