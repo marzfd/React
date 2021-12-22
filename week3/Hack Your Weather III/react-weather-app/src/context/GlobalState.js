@@ -13,6 +13,7 @@ export const GlobalProvider = ({ children }) => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState([]);
   const [found, setFound] = useState(true);
+  const [forecastData, setForecastData] = useState();
 
   // Fetches weather data
   const handleSubmit = async (e) => {
@@ -57,7 +58,15 @@ export const GlobalProvider = ({ children }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
+
+      const forecast = data.list.map(item => {
+        return {
+          date: item.dt_txt,
+          temp: item.main.temp,
+        }
+      });
+      setForecastData(forecast);
+      console.log(forecast);
     }
     catch(err) {
       console.log(`Error ! : ${err}`);
@@ -73,6 +82,7 @@ export const GlobalProvider = ({ children }) => {
         setWeatherData,
         found,
         setFound,
+        forecastData,
         handleSubmit,
         handleDelete,
         handleForecast

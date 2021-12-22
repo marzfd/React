@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { Link } from "react-router-dom";
 
 function CityInfo( { weatherData } ) {
 
@@ -23,15 +24,18 @@ function CityInfo( { weatherData } ) {
       </ul>
 
       <div>
-        <button
-          className='forecastBtn'
-          onClick={() => {
-            console.log('forecast button clicked');
-            handleForecast(weatherData.id);
-          }}
-        >
-          5-day Forecast
-        </button>
+
+        <Link to='/:cityId'>
+          <button
+            className='forecastBtn'
+            onClick={() => {
+              handleForecast(weatherData.id);
+            }}
+          >
+            5-day Forecast
+          </button>
+        </Link>
+
         <button
           className='deleteBtn'
           onClick={() => {

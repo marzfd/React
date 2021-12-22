@@ -40,12 +40,11 @@ body {
 .city-list {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
   margin-top: 1%;
   border: 2px solid #282c34;
   position: relative;
-
+  width: 380px;
 }
 
 .city-list li {
@@ -116,7 +115,8 @@ body {
 }
 
 .searchBtn,
-.forecastBtn {
+.forecastBtn,
+.backBtn {
   display: inline-block;
   border: none;
   border-radius: 5px;
@@ -133,14 +133,13 @@ body {
 .forecastBtn {
   padding:0.5em 1em;
   position: absolute;
-  top: 2%;
-  left: 60%;
+  top: 3%;
+  left: 62%;
   transition: opacity 0.3s ease;
   font-size: 1rem;
   background-color: #4bb8eb;
   box-shadow: 0 3px 20px rgba(46, 110, 229, 0.4);
   color: #071736;
-
 }
 
 .searchBtn:hover{
@@ -151,6 +150,42 @@ body {
 .forecastBtn:hover {
   background-color: #062242;
   color: #fff;
+}
+
+.backBtn {
+  padding: 0.5em 1em;
+  margin: 20px 0;
+}
+
+.backBtn:hover {
+  transform: scale(1.03);
+}
+
+.forecastPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.forecastPage h1 {
+  font-size: calc(10px + 2vmin);
+  margin-bottom: 1rem;
+  background-color: #28b9fc;
+  color: #282c34;
+  padding: 15px 30px;
+  border-radius: 10px;
+}
+
+.tooltip {
+  border-radius: 0.25rem;
+  background-color: #282c34;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 15px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 footer {
@@ -179,6 +214,10 @@ footer {
     margin-bottom: 0;
   }
 
+  .city-list {
+    width: 360px;
+  }
+
   .city-list li {
     font-size: calc(10px + 1vmin);
     padding: 5px 10px;
@@ -191,7 +230,7 @@ footer {
   }
 
   .forecastBtn {
-    left: 63%;
+    left: 65%;
     font-size: calc(8px + 1vmin);
   }
 }
@@ -210,6 +249,10 @@ footer {
     margin:0.4em auto;
     display: block;
     font-size: smaller;
+  }
+
+  .city-list {
+    width: 250px;
   }
 
   .city-list li {
@@ -236,8 +279,14 @@ footer {
   }
 
   .forecastBtn {
-    left: 55%;
-    font-size: calc(7px + .5vmin);
+    left: 58%;
+    font-size: calc(7px + 1vmin);
   }
 
+  .deleteBtn {
+    top: 89%;
+    left: 98%;
+    font-size: calc(10px + 1vmin);
+    padding: 0.1rem 0.5rem;
+  }
 }
