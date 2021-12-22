@@ -1,28 +1,28 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
-function CityInfo() {
+function CityInfo({weatherData}) {
 
   const {
-    weatherData: {
       id,
       name,
       sys: { country },
       weather: [{ main, description }],
        main: { temp_min, temp_max },
        coord: { lat, lon }
-    },
+    } = weatherData
+
+  const {
     handleDelete,
     handleForecast
   } = useContext(GlobalContext);
-
 
   return (
     <>
       <div className="city-list">
       <ul>
         <li>
-          <h3><em>{name}, {country}</em></h3>
+           <h3><em>{name}, {country}</em></h3>
           <h4>{main}</h4>
           <p className="desc"><em>{description}</em></p>
           <p>Min temp: {(temp_min).toFixed(2)} &deg;C </p>
