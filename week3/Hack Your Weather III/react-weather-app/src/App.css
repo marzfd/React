@@ -184,7 +184,7 @@ body {
   background-color: #282c34;
   color: #fff;
   padding: 1rem;
-  box-shadow: 15px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 15px 15px 10px rgba(49, 46, 46, 0.2);
   text-align: center;
 }
 

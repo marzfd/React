@@ -67,6 +67,7 @@ export const GlobalProvider = ({ children }) => {
       });
       setForecastData(forecast);
       console.log(forecast);
+      console.log(data);
     }
     catch(err) {
       console.log(`Error ! : ${err}`);

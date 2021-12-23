@@ -21,13 +21,13 @@ function Forecast() {
       <h1>5 Days Forecast</h1>
 
       <div className='forecastChart'>
-        <ResponsiveContainer width='100%' height={300}>
+        <ResponsiveContainer width='100%' height={400}>
           <AreaChart
             data={forecastData}
             margin={{
               top: 10,
-              right: 30,
-              left: 0,
+              right: 10,
+              left: 10,
               bottom: 0
             }}
           >
@@ -37,21 +37,17 @@ function Forecast() {
                 <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <Area type='monotone' dataKey='temp' stroke='#8884d8' fill='#8884d8' />
+            <Area type='monotone' dataKey='temp' stroke='#282c34' fill='#282c34' />
             <XAxis
               dataKey='date'
-              axisLine={false}
-              tickLine={false}
-              tick={{ fill: '#fff' }}
+              tick={{ fill: '#282c34' }}
             />
             <YAxis
               dataKey='temp'
-              axisLine={false}
-              tickLine={false}
-              tick={{ fontSize: 12 }}
-              tickFormatter={temp => `${temp}°C`}
+              tick={{ fontSize: 15, fill: '#282c34' }}
+              tickFormatter={temp => `${temp} °C`}
             />
-            <Tooltip content={<CustomTooltip />}/>
+            <Tooltip content={<CustomTooltip />} />
             <CartesianGrid strokeDasharray="3 3" opacity={0.1} vertical={false} />
           </AreaChart>
         </ResponsiveContainer>
