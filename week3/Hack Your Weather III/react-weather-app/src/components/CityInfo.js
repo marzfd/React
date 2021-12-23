@@ -24,8 +24,8 @@ function CityInfo( { weatherData } ) {
       </ul>
 
       <div>
-
-        <Link to='/:cityId'>
+  
+        <Link to={`/${weatherData.id}`}>
           <button
             className='forecastBtn'
             onClick={() => {
