@@ -9,7 +9,7 @@ import {
   YAxis,
   Area,
   Tooltip,
-  CartesianGrid
+  CartesianGrid,
 } from "recharts";
 
 function Forecast() {
@@ -21,23 +21,25 @@ function Forecast() {
       <h1>5 Days Forecast</h1>
 
       <div className='forecastChart'>
-        <ResponsiveContainer width='100%' height={400}>
+        <ResponsiveContainer width='100%' height={300}>
           <AreaChart
             data={forecastData}
             margin={{
-              top: 10,
+              top: 30,
               right: 10,
-              left: 10,
-              bottom: 0
+              left: 0,
+              bottom: 0,
             }}
           >
-            <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <Area type='monotone' dataKey='temp' stroke='#282c34' fill='#282c34' />
+            <Area
+              type='monotone'
+
+              dataKey='temp'
+
+              stroke='#945cb4'
+              fill='#d0b9f5'
+
+            />
             <XAxis
               dataKey='date'
               tick={{ fill: '#282c34' }}
@@ -47,7 +49,8 @@ function Forecast() {
               tick={{ fontSize: 15, fill: '#282c34' }}
               tickFormatter={temp => `${temp} °C`}
             />
-            <Tooltip content={<CustomTooltip />} />
+            <Tooltip
+            />
             <CartesianGrid strokeDasharray="3 3" opacity={0.1} vertical={false} />
           </AreaChart>
         </ResponsiveContainer>
@@ -61,19 +64,6 @@ function Forecast() {
 
     </div>
   );
-}
-
-function CustomTooltip({ active, payload, label }) {
-  if (active) {
-    return (
-      <div className="tooltip">
-        <p>{`${label}`}</p>
-        <p>{`${payload[0].value}°C`}</p>
-      </div>
-    );
-  }
-
-  return null;
 }
 
 export default Forecast;
