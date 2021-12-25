@@ -1,0 +1,55 @@
+body {
+  background-color: aliceblue;
+  font-family: 'Roboto';
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 8vmin;
+  pointer-events: none;
+  margin-top: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 50px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #282c34;
+  color: white;
+  font-size: calc(8px + 1vmin);
+  font-family: cursive;
+  text-align: center;
+}
