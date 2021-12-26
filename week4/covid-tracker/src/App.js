@@ -45,15 +45,15 @@ function App() {
   }, [])
 
   return (
-    <div style={styles.App}>
-      <header style={styles.header}>
+    <div className={styles.App}>
+      <header className={styles.header}>
         <img src={logo} alt="logo" className={styles.logo} />
         <p>
           Covid-19 Tracker
         </p>
       </header>
 
-      <main>
+      <main className={styles.container}>
         {data && <Cards data={data}/>}
         <CountryPicker />
         <Charts dailyData={dailyData}/>
