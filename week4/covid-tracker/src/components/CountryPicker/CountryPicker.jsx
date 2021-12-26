@@ -5,16 +5,10 @@ import styles from './CountryPicker.module.css'
 const CountryPicker = ({ countries, handleCountryChange }) => {
   return (
     <FormControl className={styles.formControl}>
-      <NativeSelect>
-        <option value='global'>Global</option>
+      <NativeSelect defaultValue='' onChange={e => handleCountryChange(e.target.value)}>
+        <option value=''>Global</option>
         {countries.map((country, index) =>
-          <option
-            key={index}
-            value={country}
-            onChange={handleCountryChange}
-          >
-            {country}
-          </option>
+          <option key={index} value={country}>{country}</option>
         )}
       </NativeSelect>
     </FormControl>

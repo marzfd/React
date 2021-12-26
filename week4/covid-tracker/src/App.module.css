@@ -17,7 +17,7 @@ body {
 .logo {
   height: 8vmin;
   pointer-events: none;
-  margin-top: 10px;
+  margin: 5px 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -44,7 +44,11 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  margin-bottom: 50px;
+}
+
+.img {
+  width: 370px;
+  margin: 20px 0 0 0;
 }
 
 footer {
@@ -56,4 +60,10 @@ footer {
   font-size: calc(8px + 1vmin);
   font-family: cursive;
   text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .img {
+    width: 80%;
+  }
 }

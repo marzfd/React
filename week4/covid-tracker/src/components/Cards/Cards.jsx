@@ -7,7 +7,7 @@ import CountUp from 'react-countup';
 const Cards = ( {data: { confirmed, recovered, deaths, lastUpdate }}) => {
 
   return (
-    <div style={styles.container}>
+    <div className={styles.container}>
       <Grid container spacing={3} justifyContent='center'>
         <Grid item element={Card} xs={10} md={3} className={cx(styles.box, styles.card, styles.infected)}>
           <CardContent>

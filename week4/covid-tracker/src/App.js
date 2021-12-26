@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import { Cards, Charts, CountryPicker } from './components';
 import styles from './App.module.css';
 import axios from 'axios';
+import coronaImage from './img/covid-19.png'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
 
   // Fetch Data
   const url = 'https://covid19.mathdro.id/api';
+
+  //All Data
   useEffect(() => {
     async function fetchData() {
       const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios(url);
@@ -27,6 +30,7 @@ function App() {
     fetchData();
   }, []);
 
+  // Daily Data
   useEffect(() => {
     async function fetchDailyData() {
       const { data } = await axios(`${url}/daily`);
@@ -44,6 +48,7 @@ function App() {
     fetchDailyData();
   }, []);
 
+  // List of Countries
   useEffect(() => {
     async function fetchCountries() {
       const { data: { countries } } = await axios(`${url}/countries`);
@@ -54,6 +59,7 @@ function App() {
     fetchCountries();
   }, [])
 
+  // Specific Country Data
   async function handleCountryChange(country) {
     const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios(`${url}/countries/${country}`);
 
@@ -67,20 +73,17 @@ function App() {
   }
 
 
-
   return (
     <div className={styles.App}>
       <header className={styles.header}>
         <img src={logo} alt="logo" className={styles.logo} />
-        <p>
-          Covid-19 Tracker
-        </p>
       </header>
 
       <main className={styles.container}>
+        <img src={coronaImage} className={styles.img} alt='covid-19'/>
         {data && <Cards data={data}/>}
         <CountryPicker countries={countries} handleCountryChange={handleCountryChange}/>
-        <Charts dailyData={dailyData} data={data} countries={countries}/>
+        <Charts dailyData={dailyData}/>
       </main>
 
       <footer>

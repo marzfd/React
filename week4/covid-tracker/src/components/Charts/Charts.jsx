@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 )
 
-const Charts = ({ dailyData }) => {
+const Charts = ({ dailyData, data, country }) => {
 
   const lineChart = (
     dailyData ? (
