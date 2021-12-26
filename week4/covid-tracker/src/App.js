@@ -7,6 +7,8 @@ import axios from 'axios';
 function App() {
 
   const [data, setData] = useState();
+  const [dailyData, setDailyData] = useState([]);
+
 
   // Fetch Data
   const url = 'https://covid19.mathdro.id/api';
@@ -25,6 +27,23 @@ function App() {
     fetchData();
   }, [])
 
+  useEffect(() => {
+    async function fetchDailyData() {
+      const { data } = await axios(`${url}/daily`);
+
+      const covidDailyData = data.map(({ confirmed, recovered, deaths, reportDate: date }) => (
+        {
+          confirmed: confirmed.total,
+          recovered: recovered.total,
+          deaths: deaths.total,
+          date
+        }
+      ));
+      setDailyData(covidDailyData)
+    }
+    fetchDailyData();
+  }, [])
+
   return (
     <div style={styles.App}>
       <header style={styles.header}>
@@ -37,7 +56,7 @@ function App() {
       <main>
         {data && <Cards data={data}/>}
         <CountryPicker />
-        <Charts />
+        <Charts dailyData={dailyData}/>
       </main>
 
       <footer>
