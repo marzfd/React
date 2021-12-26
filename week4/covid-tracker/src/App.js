@@ -8,7 +8,7 @@ function App() {
 
   const [data, setData] = useState();
   const [dailyData, setDailyData] = useState([]);
-
+  const [countries, setCountries] = useState([]);
 
   // Fetch Data
   const url = 'https://covid19.mathdro.id/api';
@@ -25,7 +25,7 @@ function App() {
       setData(covidData);
     }
     fetchData();
-  }, [])
+  }, []);
 
   useEffect(() => {
     async function fetchDailyData() {
@@ -42,7 +42,31 @@ function App() {
       setDailyData(covidDailyData)
     }
     fetchDailyData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchCountries() {
+      const { data: { countries } } = await axios(`${url}/countries`);
+
+      const covidCountries = countries.map(country => country.name);
+      setCountries(covidCountries)
+    }
+    fetchCountries();
   }, [])
+
+  async function handleCountryChange(country) {
+    const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios(`${url}/countries/${country}`);
+
+    const covidCountryData = {
+      confirmed,
+      recovered,
+      deaths,
+      lastUpdate
+    }
+    setData(covidCountryData);
+  }
+
+
 
   return (
     <div className={styles.App}>
@@ -55,8 +79,8 @@ function App() {
 
       <main className={styles.container}>
         {data && <Cards data={data}/>}
-        <CountryPicker />
-        <Charts dailyData={dailyData}/>
+        <CountryPicker countries={countries} handleCountryChange={handleCountryChange}/>
+        <Charts dailyData={dailyData} data={data} countries={countries}/>
       </main>
 
       <footer>
